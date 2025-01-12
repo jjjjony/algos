@@ -1,3 +1,6 @@
+/**
+ * BIG-O: O(n - 1) = O(n)
+ */
 function twoSum(nums: number[], target: number): number[] {
   // 1. Create a hashmap - we always lookup a nums item, so keys = nums item
   //    <K = nums item, V = item idx>
@@ -20,7 +23,4 @@ function twoSum(nums: number[], target: number): number[] {
   }
 
   return [];
-
-  // BIG-O:
-  // O(n - 1) = O(n)
 }
