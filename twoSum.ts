@@ -24,3 +24,17 @@ function twoSum(nums: number[], target: number): number[] {
 
   return [];
 }
+
+/**
+ * SUBMISSION: Minified version w no thoughts 💭
+ */
+function twoSumSubmission(nums: number[], target: number): number[] {
+  const hashmap = new Map<number, number>([[nums[0], 0]]);
+  for (let idx = 1; idx < nums.length; idx++) {
+    const num = nums[idx];
+    const remainderIdx = hashmap.get(target - num);
+    if (remainderIdx !== undefined) return [remainderIdx, idx];
+    hashmap.set(num, idx);
+  }
+  return [];
+}
