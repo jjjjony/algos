@@ -35,9 +35,9 @@ function isValid(s: string): boolean {
 };
 
 /**
- * SUBMISSION: Minified version w no thoughts 💭
+ * SUBMISSION: Minified v w no thoughts 💭
  */
-function isValidSubmission(s: string): boolean {
+function isValid_SUBMISSION(s: string): boolean {
   const bracketsStack: string[] = [];
   const bracketsHashmap = new Map<string, string>([['}','{'],[']','['],[')','(']]);
   if (s.length <= 1 || s.length % 2 !== 0 || bracketsHashmap.has(s[0])) return false;
