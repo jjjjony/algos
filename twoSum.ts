@@ -2,10 +2,9 @@
  * BIG-O: O(n - 1) = O(n)
  */
 function twoSum(nums: number[], target: number): number[] {
-  // 1. Create a hashmap - we always lookup a nums item, so keys = nums item
-  //    <K = nums item, V = item idx>
+  // 1. Create a hashmap - we always lookup nums, so keys = nums
   //    IMRPOVEMENT: Skip the 1st loop (never finds a match)
-  const hashmap = new Map<number, number>([[nums[0], 0]]);
+  const prevNumsAndTheirIndexesHashmap = new Map<number, number>([[nums[0], 0]]);
 
   // 2. O(n) over nums, skipping the 1st loop (n - 1)
   for (let idx = 1; idx < nums.length; idx++) {
@@ -17,9 +16,9 @@ function twoSum(nums: number[], target: number): number[] {
     // 4. O(1) search the hashmap
     //    Found? Success!
     //    Not found? cache and repeat...
-    const remainderIdx = hashmap.get(remainder);
+    const remainderIdx = prevNumsAndTheirIndexesHashmap.get(remainder);
     if (remainderIdx !== undefined) return [remainderIdx, idx];
-    hashmap.set(num, idx);
+    prevNumsAndTheirIndexesHashmap.set(num, idx);
   }
 
   return [];
@@ -29,12 +28,12 @@ function twoSum(nums: number[], target: number): number[] {
  * SUBMISSION: Minified v w no thoughts 💭
  */
 function twoSum_SUBMISSION(nums: number[], target: number): number[] {
-  const hashmap = new Map<number, number>([[nums[0], 0]]);
+  const prevNumsAndTheirIndexesHashmap = new Map<number, number>([[nums[0], 0]]);
   for (let idx = 1; idx < nums.length; idx++) {
     const num = nums[idx];
-    const remainderIdx = hashmap.get(target - num);
+    const remainderIdx = prevNumsAndTheirIndexesHashmap.get(target - num);
     if (remainderIdx !== undefined) return [remainderIdx, idx];
-    hashmap.set(num, idx);
+    prevNumsAndTheirIndexesHashmap.set(num, idx);
   }
   return [];
 }
