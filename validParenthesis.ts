@@ -30,7 +30,8 @@ function isValid(s: string): boolean {
     bracketsStack.push(bracket);
   }
 
-  return bracketsStack.length === 0 ? true : false;
+  const isAllClosed = bracketsStack.length === 0;
+  return isAllClosed;
 };
 
 /**
