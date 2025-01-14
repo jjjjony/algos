@@ -71,7 +71,7 @@ const queue: number[] = [];
 Ops:
 
 - `.push()` O(1), enqueue
-- `.shift()` O(n), dequeue
+- `.shift()` O(n), dequeue (O(1) if using a linked list)
 - `queue[0]` O(1), peek front
 - `queue.length === 0` O(1), is empty
 
