@@ -1,6 +1,4 @@
-# DATA STRUCTURES in TYPESCRIPT cheat sheet
-
-In order of underlying data structure from lang
+# DSA in TYPESCRIPT
 
 ## HashMap
 
@@ -10,12 +8,12 @@ const hashMap = new Map<string, string>();
 
 Ops:
 
-- `.set()` (~O(1) depending on collisions)
-- `.get()` (O(1))
-- `.has()` (O(1))
-- `.delete()` (O(1))
-- `.clear()` (O(n))
-- `.size` (O(1))
+- `.set()` ~O(1) depending on collisions
+- `.get()` O(1)
+- `.has()` O(1)
+- `.delete()` O(1)
+- `.clear()` O(n)
+- `.size` O(1)
 
 ## Graph
 
@@ -31,10 +29,10 @@ const graph = new Map<string, string[]>();
 
 Ops:
 
-- `.set()` (~O(1) depending on collisions)
-- `.get()` (O(1))
-- `.has()` (O(1))
-- `.delete()` (O(1))
+- `.set()` ~O(1) depending on collisions
+- `.get()` O(1)
+- `.has()` O(1)
+- `.delete()` O(1)
 
 ## Set
 
@@ -44,11 +42,11 @@ const set = new Set<number>();
 
 Ops:
 
-- `.add()` (O(1))
-- `.has()` (O(1))
-- `.delete()` (O(1))
-- `.clear()` (O(n))
-- `.size` (O(1))
+- `.add()` O(1)
+- `.has()` O(1)
+- `.delete()` O(1)
+- `.clear()` O(n)
+- `.size` O(1)
 
 ## Stack (FILO)
 
@@ -58,11 +56,11 @@ const stack: number[] = [];
 
 Ops:
 
-- `.push()` (O(1))
-- `.pop()` (O(1))
-- `stack[stack.length - 1]` (O(1), peek top)
-- traverse (O(n))
-- `stack.length === 0` (O(1), is empty)
+- `.push()` O(1)
+- `.pop()` O(1)
+- `stack[stack.length - 1]` O(1), peek top
+- Traverse O(n)
+- `stack.length === 0` O(1), is empty
 
 ## Queue (FIFO)
 
@@ -72,10 +70,10 @@ const queue: number[] = [];
 
 Ops:
 
-- `.push()` (O(1), enqueue)
-- `.shift()` (O(1), dequeue)
-- `queue[0]` (O(1), peek front)
-- `queue.length === 0` (O(1), is empty)
+- `.push()` O(1), enqueue
+- `.shift()` O(1), dequeue
+- `queue[0]` O(1), peek front
+- `queue.length === 0` O(1), is empty
 
 ## Linked List
 
@@ -98,8 +96,15 @@ const linkedList: Node<number> = {
 }
 
 // Traverse
-while (currNode) { currNode = currNode.next }
+while (currNode) {
+  console.log(node.value);
+  currNode = currNode.next
+}
 ```
+
+Ops:
+
+- Traverse O(n)
 
 ## Binary Search Tree
 
@@ -122,14 +127,34 @@ const binarySearchTree: Node<number> = {
   },
 };
 
-// Traverse
-function traverseInOrderRecursively<T>(node: Node<T> | null): void {
+// DFS
+function traverseDFS<T>(node: Node<T> | null): void {
   if (!node) return;
-  traverseInOrderRecursively(node.left);
+  traverseDFS(node.left);
   console.log(node.value);
-  traverseInOrderRecursively(node.right);
+  traverseDFS(node.right);
+}
+
+// BFS
+function traverseBFS<T>(root: Node<T>): void {
+  if (!root) return;
+  const queue: Node<T>[] = [root];
+
+  while (queue.length > 0) {
+    const node = queue.shift();
+    if (node) {
+      console.log(node.value);
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
+    }
+  }
 }
 ```
+
+Ops:
+
+- DFS O(n)
+- BFS O(n)
 
 ## Priority Queue
 
