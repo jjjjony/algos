@@ -71,7 +71,7 @@ const queue: number[] = [];
 Ops:
 
 - `.push()` O(1), enqueue
-- `.shift()` O(1), dequeue
+- `.shift()` O(n), dequeue
 - `queue[0]` O(1), peek front
 - `queue.length === 0` O(1), is empty
 
@@ -138,15 +138,17 @@ function traverseDFS<T>(node: Node<T> | null): void {
 // BFS
 function traverseBFS<T>(root: Node<T>): void {
   if (!root) return;
+
+  let front = 0;
   const queue: Node<T>[] = [root];
 
-  while (queue.length > 0) {
-    const node = queue.shift();
-    if (node) {
-      console.log(node.value);
-      if (node.left) queue.push(node.left);
-      if (node.right) queue.push(node.right);
-    }
+  while (front < queue.length) {
+    const node = queue[front];
+    console.log(node.value);
+
+    if (node.left) queue.push(node.left);
+    if (node.right) queue.push(node.right);
+    front++;
   }
 }
 ```
