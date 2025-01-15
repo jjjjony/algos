@@ -18,7 +18,9 @@ function missingNumber(nums: number[]): number {
   // SOLUTION 2 = O(n)
   //  Remove one of the O(n) traversals by using the sum (which we know upfront)
   let sum = (n * (n + 1)) / 2;
-  for (const num of nums) sum -= num;
+  for (const num of nums) {
+    sum -= num;
+  }
   return sum;
 
   return 0;
@@ -30,6 +32,8 @@ function missingNumber(nums: number[]): number {
 function missingNumber_SUBMISSION(nums: number[]): number {
   const n = nums.length;
   let sum = (n * (n + 1)) / 2;
-  for (const num of nums) sum -= num;
+  for (const num of nums) {
+    sum -= num;
+  }
   return sum;
 }
