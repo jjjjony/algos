@@ -27,12 +27,13 @@ function findDisappearedNumbers(nums: number[]): number[] {
  */
 function findDisappearedNumbers_SUBMISSION(nums: number[]): number[] {
   const n = nums.length;
-  const res: number[] = [];
   const offsetStartingIndexBy = 1;
   const tracker = new Array(n + offsetStartingIndexBy);
   for (let i = 0; i < n; i++) {
     tracker[nums[i]] = true;
   }
+
+  const res: number[] = [];
   for (let i = offsetStartingIndexBy; i < tracker.length; i++) {
     if (!tracker[i]) res.push(i);
   }
