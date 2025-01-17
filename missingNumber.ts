@@ -1,5 +1,6 @@
 /**
  * BIG-O: O(n) time
+ *  Solution w thoughts 💭
  */
 function missingNumber(nums: number[]): number {
   const n = nums.length;
@@ -24,16 +25,4 @@ function missingNumber(nums: number[]): number {
   return sum;
 
   return 0;
-}
-
-/**
- * SUBMISSION: Minified v w no thoughts 💭
- */
-function missingNumber_SUBMISSION(nums: number[]): number {
-  const n = nums.length;
-  let sum = (n * (n + 1)) / 2;
-  for (const num of nums) {
-    sum -= num;
-  }
-  return sum;
 }

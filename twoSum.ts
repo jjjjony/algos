@@ -1,5 +1,6 @@
 /**
  * BIG-O: O(n - 1) = O(n) time
+ *  Solution w thoughts 💭
  */
 function twoSum(nums: number[], target: number): number[] {
   // 1. Create a hashmap - we always lookup nums, so keys = nums
@@ -23,21 +24,5 @@ function twoSum(nums: number[], target: number): number[] {
     prevNumsAndTheirIndexesHashmap.set(num, idx);
   }
 
-  return [];
-}
-
-/**
- * SUBMISSION: Minified v w no thoughts 💭
- */
-function twoSum_SUBMISSION(nums: number[], target: number): number[] {
-  const prevNumsAndTheirIndexesHashmap = new Map<number, number>([
-    [nums[0], 0],
-  ]);
-  for (let idx = 1; idx < nums.length; idx++) {
-    const num = nums[idx];
-    const remainderIdx = prevNumsAndTheirIndexesHashmap.get(target - num);
-    if (remainderIdx !== undefined) return [remainderIdx, idx];
-    prevNumsAndTheirIndexesHashmap.set(num, idx);
-  }
   return [];
 }

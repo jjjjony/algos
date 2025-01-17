@@ -1,5 +1,6 @@
 /**
  * BIG-O: O(n) time
+ *  Solution w thoughts 💭
  */
 function singleNumber(nums: number[]): number {
   // MUST:
@@ -14,18 +15,6 @@ function singleNumber(nums: number[]): number {
   let sum = 0;
   for (let i = 0; i < nums.length; i++) {
     sum ^= nums[i]; // do a XOR to toggle each bit a.k.a each num
-  }
-  return sum;
-}
-
-/**
- * SUBMISSION: Minified v w no thoughts 💭
- */
-
-function singleNumbe_SUBMISSION(nums: number[]): number {
-  let sum = 0;
-  for (let i = 0; i < nums.length; i++) {
-    sum ^= nums[i];
   }
   return sum;
 }

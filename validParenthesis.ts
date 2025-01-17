@@ -1,5 +1,6 @@
 /**
  * BIG-O: O(n) time
+ *  Solution w thoughts 💭
  */
 function isValid(s: string): boolean {
   // 1. Prepare O(1) lookups for specific-pairs
@@ -31,27 +32,4 @@ function isValid(s: string): boolean {
 
   const isAllClosed = bracketsStack.length === 0;
   return isAllClosed;
-}
-
-/**
- * SUBMISSION: Minified v w no thoughts 💭
- */
-function isValid_SUBMISSION(s: string): boolean {
-  const bracketsStack: string[] = [];
-  const bracketsHashmap = new Map<string, string>([
-    ["}", "{"],
-    ["]", "["],
-    [")", "("],
-  ]);
-  if (s.length <= 1 || s.length % 2 !== 0 || bracketsHashmap.has(s[0]))
-    return false;
-  for (const bracket of s) {
-    const openBracketNeeded = bracketsHashmap.get(bracket);
-    if (openBracketNeeded) {
-      if (!(bracketsStack.pop() === openBracketNeeded)) return false;
-      continue;
-    }
-    bracketsStack.push(bracket);
-  }
-  return bracketsStack.length === 0;
 }

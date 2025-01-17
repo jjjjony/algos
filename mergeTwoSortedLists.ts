@@ -9,7 +9,8 @@ class ListNode {
 
 /**
  * BIG-O: O(n+m) time
- * Worst-case performing an op on each n & m
+ *  Worst-case performing an op on each n & m
+ *  Solution w thoughts 💭
  */
 function mergeTwoLists(
   list1: ListNode | null,
@@ -43,31 +44,5 @@ function mergeTwoLists(
   if (currL1) tail.next = currL1;
   if (currL2) tail.next = currL2;
 
-  return dummyNode.next;
-}
-
-/**
- * SUBMISSION: Minified v w no thoughts 💭
- */
-function mergeTwoLists_SUBMISSION(
-  list1: ListNode | null,
-  list2: ListNode | null
-): ListNode | null {
-  const dummyNode = new ListNode();
-  let tail = dummyNode;
-  let currL1 = list1;
-  let currL2 = list2;
-  while (currL1 && currL2) {
-    if (currL1.val < currL2.val) {
-      tail.next = currL1;
-      currL1 = currL1.next;
-    } else {
-      tail.next = currL2;
-      currL2 = currL2.next;
-    }
-    tail = tail.next;
-  }
-  if (currL1) tail.next = currL1;
-  if (currL2) tail.next = currL2;
   return dummyNode.next;
 }
