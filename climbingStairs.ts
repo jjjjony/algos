@@ -25,10 +25,10 @@ function getNextPossiblePath(remainingSteps: number, cache: number[]): number {
   if (isReachedTheTop) return 1; // completed 1 possible path
 
   // Cache hit!
-  if (cache[remainingSteps] !== -1) return cache[remainingSteps];
+  if (cache[remainingSteps] !== -1) return cache[remainingSteps]; // number of possible branches from here were already calculated, return early
 
   // Cache miss!
-  let count = 0; // max 2 possible outcomes, user takes 1 step or 2 steps
+  let count = 0; // number of sub-branches/paths that reached the top
   count += getNextPossiblePath(remainingSteps - 1, cache); // branch off to an alt path
   count += getNextPossiblePath(remainingSteps - 2, cache); // branch off to an alt path
   cache[remainingSteps] = count;
