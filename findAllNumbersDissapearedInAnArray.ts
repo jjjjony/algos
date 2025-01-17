@@ -1,5 +1,5 @@
 /**
- * BIG-O: O(n)
+ * BIG-O: O(n) time
  *
  */
 function findDisappearedNumbers(nums: number[]): number[] {

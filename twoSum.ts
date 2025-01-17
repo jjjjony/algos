@@ -1,10 +1,12 @@
 /**
- * BIG-O: O(n - 1) = O(n)
+ * BIG-O: O(n - 1) = O(n) time
  */
 function twoSum(nums: number[], target: number): number[] {
   // 1. Create a hashmap - we always lookup nums, so keys = nums
   //    IMRPOVEMENT: Skip the 1st loop (never finds a match)
-  const prevNumsAndTheirIndexesHashmap = new Map<number, number>([[nums[0], 0]]);
+  const prevNumsAndTheirIndexesHashmap = new Map<number, number>([
+    [nums[0], 0],
+  ]);
 
   // 2. O(n) over nums, skipping the 1st loop (n - 1)
   for (let idx = 1; idx < nums.length; idx++) {
@@ -28,7 +30,9 @@ function twoSum(nums: number[], target: number): number[] {
  * SUBMISSION: Minified v w no thoughts 💭
  */
 function twoSum_SUBMISSION(nums: number[], target: number): number[] {
-  const prevNumsAndTheirIndexesHashmap = new Map<number, number>([[nums[0], 0]]);
+  const prevNumsAndTheirIndexesHashmap = new Map<number, number>([
+    [nums[0], 0],
+  ]);
   for (let idx = 1; idx < nums.length; idx++) {
     const num = nums[idx];
     const remainderIdx = prevNumsAndTheirIndexesHashmap.get(target - num);

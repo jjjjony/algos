@@ -8,7 +8,7 @@ class ListNode {
 }
 
 /**
- * BIG-O: O(n+m)
+ * BIG-O: O(n+m) time
  * Worst-case performing an op on each n & m
  */
 function mergeTwoLists(

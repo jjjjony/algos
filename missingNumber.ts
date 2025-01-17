@@ -1,5 +1,5 @@
 /**
- * BIG-O: O(n)
+ * BIG-O: O(n) time
  */
 function missingNumber(nums: number[]): number {
   const n = nums.length;
