@@ -2,8 +2,8 @@
  * BIG-O: O(n) time where n = number of steps...
  *  ...as any duplicate recursions using the same number of remaining steps are returned immediately (does not branch)...
  *  ...the cache is passed by ref so available at any point of the tree
- *  FYI this is a dynamic programming problem!!!
  *  Solution w thoughts 💭
+ *  #easy #dynamic-programming #recursion
  */
 function climbStairs(n: number): number {
   // To avoid an exponential O(2^n) timeout

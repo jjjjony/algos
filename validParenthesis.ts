@@ -1,6 +1,7 @@
 /**
  * BIG-O: O(n) time
  *  Solution w thoughts 💭
+ *  #easy #hashmaps #stacks
  */
 function isValid(s: string): boolean {
   // 1. Prepare O(1) lookups for specific-pairs

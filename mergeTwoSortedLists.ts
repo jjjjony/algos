@@ -11,6 +11,7 @@ class ListNode {
  * BIG-O: O(n+m) time
  *  Worst-case performing an op on each n & m
  *  Solution w thoughts 💭
+ *  #easy #linked-lists
  */
 function mergeTwoLists(
   list1: ListNode | null,

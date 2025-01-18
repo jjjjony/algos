@@ -1,6 +1,7 @@
 /**
  * BIG-O: O(n) time
  *  Solution w thoughts 💭
+ *  #easy
  */
 function missingNumber(nums: number[]): number {
   const n = nums.length;

@@ -1,6 +1,7 @@
 /**
  * BIG-O: O(n) time
  *  Solution w thoughts 💭
+ *  #easy #arrays
  */
 function findDisappearedNumbers(nums: number[]): number[] {
   // O(n) use originally solution from 'Missing Number'

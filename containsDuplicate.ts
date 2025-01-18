@@ -1,6 +1,7 @@
 /**
  * BIG-O: O(n)
  *  Solution w thoughts 💭
+ *  #easy #set
  */
 function containsDuplicate(nums: number[]): boolean {
   const seenNumsSet = new Set<number>();

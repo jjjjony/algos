@@ -1,6 +1,7 @@
 /**
  * BIG-O: O(n) time
  *  Solution w thoughts 💭
+ *  #easy #bit-manipulation
  */
 function singleNumber(nums: number[]): number {
   // MUST:

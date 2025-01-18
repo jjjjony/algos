@@ -1,6 +1,7 @@
 /**
  * BIG-O: O(n - 1) = O(n) time
  *  Solution w thoughts 💭
+ *  #easy #hashmaps
  */
 function twoSum(nums: number[], target: number): number[] {
   // 1. Create a hashmap - we always lookup nums, so keys = nums
