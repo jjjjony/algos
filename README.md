@@ -160,4 +160,15 @@ Ops:
 
 ## Priority Queue
 
-TODO
+```typescript
+class PriorityQueue<T> {
+  private items: T[] = [];
+  enqueue(item: T): void {
+    this.items.push(item);
+    this.items.sort((a, b) => a - b); // Replace with comparator for complex types
+  }
+  dequeue(): T | undefined {
+    return this.items.shift();
+  }
+}
+```
