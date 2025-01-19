@@ -11,6 +11,7 @@ function isPalindrome(s: string): boolean {
 
   // The chars before transformation affect the window lengths
   // O(n) to create the new array, don't bother converting back to a string (avoid another O(n))
+  // Yes we can check the ascii code as alphanumerics are contigious, but irl that's JIT info, not practical to memorise
   const validChars = new Set([
     "a",
     "b",
