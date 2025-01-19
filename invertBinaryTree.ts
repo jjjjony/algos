@@ -14,7 +14,7 @@ class TreeNode {
  *  Solution w thoughts 💭
  *  #easy #binary-tree #queues
  */
-function invertTree(root: TreeNode | null): TreeNode | null {
+function invertTree_using_BFS(root: TreeNode | null): TreeNode | null {
   if (!root) return null;
   const res = root; // the root remains the same after inversion
 
@@ -39,4 +39,26 @@ function invertTree(root: TreeNode | null): TreeNode | null {
   }
 
   return res;
+}
+
+/**
+ * BIG-O: O(n) time
+ *  Solution w thoughts 💭
+ *  #easy #binary-tree #queues
+ */
+function invertTree_using_DFS(root: TreeNode | null): TreeNode | null {
+  if (!root) return null;
+
+  const dfs = (node: TreeNode | null): void => {
+    if (!node) return;
+    // Swap
+    const temp = node.left;
+    node.left = node.right;
+    node.right = temp;
+    dfs(node.left);
+    dfs(node.right);
+  };
+
+  dfs(root);
+  return root;
 }
