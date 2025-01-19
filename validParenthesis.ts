@@ -16,8 +16,7 @@ function isValid(s: string): boolean {
   const bracketsStack: string[] = [];
 
   // 3. Guard: Handle cases that fail immediately
-  const isCannotBeClosed =
-    s.length <= 1 || s.length % 2 !== 0 || bracketsHashmap.has(s[0]);
+  const isCannotBeClosed = s.length <= 1 || s.length % 2 !== 0 || bracketsHashmap.has(s[0]);
   if (isCannotBeClosed) return false;
 
   // 4. O(n) over the string

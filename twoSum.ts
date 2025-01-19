@@ -6,9 +6,7 @@
 function twoSum(nums: number[], target: number): number[] {
   // 1. Create a hashmap - we always lookup nums, so keys = nums
   //    IMRPOVEMENT: Skip the 1st loop (never finds a match)
-  const prevNumsAndTheirIndexesHashmap = new Map<number, number>([
-    [nums[0], 0],
-  ]);
+  const prevNumsAndTheirIndexesHashmap = new Map<number, number>([[nums[0], 0]]);
 
   // 2. O(n) over nums, skipping the 1st loop (n - 1)
   for (let idx = 1; idx < nums.length; idx++) {

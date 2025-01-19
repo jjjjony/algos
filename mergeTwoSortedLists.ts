@@ -13,10 +13,7 @@ class ListNode {
  *  Solution w thoughts 💭
  *  #easy #linked-lists
  */
-function mergeTwoLists(
-  list1: ListNode | null,
-  list2: ListNode | null
-): ListNode | null {
+function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode | null {
   // 1. Initially trying to determine which node to start and which to inner-traverse...
   //    Instead, create a dummy head node so the same pattern is applied to L1 & L2 w no need to determine head upfront
   //    We simply return dummy's -> next (one of the original heads)
