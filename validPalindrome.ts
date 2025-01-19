@@ -1,5 +1,5 @@
 /**
- * BIG-O: O(n) + O(n) = O(n)
+ * BIG-O: O(n) + O(n / 2) = O(n)
  *  Solution w thoughts 💭
  *  #easy #arrays
  */
@@ -64,7 +64,7 @@ function isPalindrome(s: string): boolean {
   // let leftWindowIdx = (isOdd ? Math.floor(mid) : mid) - 1; // -1 to start at 0th index
   // let rightWindowIdx = isOdd ? Math.ceil(mid) : mid; // already at valid index
 
-  // // O(n) iterate for the length of either window
+  // // O(n / 2) iterate for the length of either window
   // for (let i = 0; i < Math.floor(mid); i++) {
   //   const leftChar = sTransformed[leftWindowIdx];
   //   const rightChar = sTransformed[rightWindowIdx];
