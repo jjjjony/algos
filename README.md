@@ -144,6 +144,7 @@ function traverseBFS<T>(root: Node<T>): void {
 
   while (front < queue.length) {
     const node = queue[front];
+    if (!node) break;
     console.log(node.value);
 
     if (node.left) queue.push(node.left);
