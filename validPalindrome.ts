@@ -1,6 +1,11 @@
 /**
- * BIG-O: O(n) + O(n / 2) = O(n)
- *  Solution w thoughts 💭
+ * BIG-O:
+ *  TIME: O(n) + O(n/2) = O(n)
+ *    1x for loop to transform the input, 1x while loop to compare using a shrinking window
+ *  MEMORY: O(n)
+ *    Worse-case entire input is valid
+ *
+ * Solution w thoughts 💭
  *  #easy #arrays
  */
 function isPalindrome(s: string): boolean {

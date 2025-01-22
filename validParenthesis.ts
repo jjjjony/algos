@@ -1,6 +1,11 @@
 /**
- * BIG-O: O(n) time
- *  Solution w thoughts 💭
+ * BIG-O:
+ *  TIME: O(n)
+ *    1x for loop
+ *  MEMORY: O(n)
+ *    Worst-case stack never needs popping e.g., all open brackets "{{([("
+ *
+ * Solution w thoughts 💭
  *  #easy #hashmaps #stacks
  */
 function isValid(s: string): boolean {

@@ -1,6 +1,11 @@
 /**
- * BIG-O: O(n - 1) = O(n) time
- *  Solution w thoughts 💭
+ * BIG-O:
+ *  TIME: O(n - 1) = O(n)
+ *    1x for loop
+ *  MEMORY: O(n)
+ *    Worst-case all nums added to the hashmap
+ *
+ * Solution w thoughts 💭
  *  #easy #hashmaps
  */
 function twoSum(nums: number[], target: number): number[] {
