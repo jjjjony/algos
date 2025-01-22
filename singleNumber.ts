@@ -1,6 +1,11 @@
 /**
- * BIG-O: O(n) time
- *  Solution w thoughts 💭
+ * BIG-O:
+ *  TIME: O(n)
+ *    1x for loop
+ *  MEMORY: O(1)
+ *    1x int used to track
+ *
+ * Solution w thoughts 💭
  *  #easy #bit-manipulation
  */
 function singleNumber(nums: number[]): number {

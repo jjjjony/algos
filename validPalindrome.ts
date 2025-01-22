@@ -6,7 +6,7 @@
  *    Worse-case entire input is valid
  *
  * Solution w thoughts 💭
- *  #easy #arrays
+ *  #easy #arrays #sliding-windows
  */
 function isPalindrome(s: string): boolean {
   // Faster/simpler to assume true and fail immediately

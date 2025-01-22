@@ -3,7 +3,9 @@ import { ListNode } from "./types/ListNode";
 /**
  * BIG-O:
  *  TIME: O(n)
+ *    1x while loop
  *  MEMORY: O(1)
+ *    In-place reversing, no need for additional data structures
  *
  * Solution w thoughts 💭
  *  #easy #linked-lists
@@ -15,6 +17,7 @@ function reverseList(head: ListNode | null): ListNode | null {
 
   let prev: ListNode | null = null;
   let curr: ListNode | null = head;
+
   while (curr) {
     // Save as references will be lost after reversing
     const nextPrev = curr;
