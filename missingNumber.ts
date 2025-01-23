@@ -1,7 +1,12 @@
 /**
- * BIG-O: O(n) time
- *  Solution w thoughts 💭
- *  #easy
+ * BIG-O:
+ *  TIME: O(n)
+ *    1x while loop
+ *  MEMORY: O(1)
+ *    1x int used to track
+ *
+ * Solution w thoughts 💭
+ *  #easy #arrays
  */
 function missingNumber(nums: number[]): number {
   const n = nums.length;
