@@ -82,6 +82,3 @@ class Solution2 {
     return this.values[chosenOne];
   }
 }
-
-// FOOTNOTES:
-// For thread safety
