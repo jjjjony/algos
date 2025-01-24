@@ -48,7 +48,9 @@ class Solution1 {
   \_______ \
           \/
 
-  IMPROVEMENT: Cache value positions in a hashmap to easily remove, always has array for getRandom()
+  IMPROVEMENT:
+    Always use an array to avoid O(n) for getRandom()
+    Use a hashmap to cache value positions to easily remove from array
   MEMORY: O(n) + O(n) = O(n) 2x DS
 */
 class Solution2 {
