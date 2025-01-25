@@ -9,23 +9,36 @@
  *    O(2n) = O(n)
  *
  * Solution w thoughts 💭
- *  #easy #hash-maps
+ *  #easy #hashmaps
  */
+type AnagramCounts = {
+  s: number;
+  t: number;
+};
+
 function isAnagram(s: string, t: string): boolean {
   if (s.length !== t.length) return false;
 
   // O(n) over both at the same time (as same length)
-  const charCountMap = new Map<string, number>();
+  const charCountMap = new Map<string, AnagramCounts>();
   for (let i = 0; i < s.length; i++) {
-    const currSCount = charCountMap.get(s[i]) ?? 0;
-    charCountMap.set(s[i], currSCount + 1);
-    const currTCount = charCountMap.get(t[i]) ?? 0;
-    charCountMap.set(t[i], currTCount + 1);
+    const countsForCharS = charCountMap.get(s[i]);
+    if (!countsForCharS) charCountMap.set(s[i], { s: 1, t: 0 });
+    else countsForCharS.s++; // just mutate as referenced
+
+    const countsForCharT = charCountMap.get(t[i]);
+    if (!countsForCharT) charCountMap.set(t[i], { s: 0, t: 1 });
+    else countsForCharT.t++; // just mutate as referenced
   }
 
-  // If a char count is odd, it's not an anagram (one string is missing a char)
-  for (const [key, count] of charCountMap) {
-    if (count % 2 !== 0) return false;
+  // INITIAL IDEA:
+  //  If a char count is odd, it's not an anagram (one string is missing a char)
+  // IMPROVED IDEA:
+  //  Problem w initial is a count can be even if an input as double and the other has none (e.g., "aa", "bb")
+  //  Instead add a type to keep the same Big Os (rather than 2x hashmaps)
+  for (const [key, counts] of charCountMap) {
+    console.log(`${key}: ${JSON.stringify(counts)}`);
+    if (counts.s !== counts.t) return false;
   }
   return true;
 }
