@@ -17,7 +17,17 @@ type AnagramCounts = {
 };
 
 function isAnagram(s: string, t: string): boolean {
+  // ASSUMPTIONS:
+  //  Inputs are all lowercase, otherwise can count 'a' and 'A' separately or if it doesn't matter, .toLowerCase()
+
+  // ALT SOLUTION:
+  //  For no hashmap:
+  //    Split, sort, join, compare
+  //    O(n) + O(n log n) + O(n) + O(n) = O(n)
+
+  // Early returns
   if (s.length !== t.length) return false;
+  if (s.length === 1 && t.length === 1) return s === t;
 
   // O(n) over both at the same time (as same length)
   const charCountMap = new Map<string, AnagramCounts>();
