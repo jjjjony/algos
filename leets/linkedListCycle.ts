@@ -1,8 +1,11 @@
 import { ListNode } from "./types/ListNode";
 
 /**
- * BIG-O: O(n) time
- *  Solution w thoughts 💭
+ * BIG-O:
+ *  TIME: O(n)
+ *  MEMORY: O(1)
+ *
+ * Solution w thoughts 💭
  *  #easy #linked-lists
  */
 function hasCycle(head: ListNode | null): boolean {

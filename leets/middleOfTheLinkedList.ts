@@ -1,8 +1,11 @@
 import { ListNode } from "./types/ListNode";
 
 /**
- * BIG-O: O(n) time, O(1) memory
- *  Solution w thoughts 💭
+ * BIG-O:
+ *  TIME: O(n)
+ *  MEMORY: O(1)
+ *
+ * Solution w thoughts 💭
  *  #easy #hashmaps #linked-lists
  */
 function middleNode(head: ListNode | null): ListNode | null {

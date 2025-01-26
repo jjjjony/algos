@@ -1,9 +1,11 @@
 import { ListNode } from "./types/ListNode";
 
 /**
- * BIG-O: O(n+m) time
- *  Worst-case performing an op on each n & m
- *  Solution w thoughts 💭
+ * BIG-O:
+ *  TIME: O(n+m)
+ *  MEMORY: O(1)
+ *
+ * Solution w thoughts 💭
  *  #easy #linked-lists
  */
 function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode | null {

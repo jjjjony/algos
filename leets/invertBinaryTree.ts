@@ -1,8 +1,11 @@
 import { TreeNode } from "./types/TreeNode";
 
 /**
- * BIG-O: O(n) time
- *  Solution w thoughts 💭
+ * BIG-O:
+ *  TIME: O(n)
+ *  MEMORY: TODO
+ *
+ * Solution w thoughts 💭
  *  #easy #binary-tree #queues
  */
 function invertTree_using_BFS(root: TreeNode | null): TreeNode | null {
