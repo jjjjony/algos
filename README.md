@@ -48,33 +48,6 @@ Ops:
 - `.clear()` O(n)
 - `.size` O(1)
 
-## Stack (FILO)
-
-```typescript
-const stack: number[] = [];
-```
-
-Ops:
-
-- `.push()` O(1)
-- `.pop()` O(1)
-- `stack[stack.length - 1]` O(1), peek top
-- Traverse O(n)
-- `stack.length === 0` O(1), is empty
-
-## Queue (FIFO)
-
-```typescript
-const queue: number[] = [];
-```
-
-Ops:
-
-- `.push()` O(1), enqueue
-- `.shift()` O(n), dequeue (O(1) if using a linked list)
-- `queue[0]` O(1), peek front
-- `queue.length === 0` O(1), is empty
-
 ## Linked List
 
 ```typescript
