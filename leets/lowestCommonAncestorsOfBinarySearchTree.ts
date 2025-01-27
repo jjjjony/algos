@@ -27,8 +27,8 @@ function lowestCommonAncestor(root: TreeNode | null, p: TreeNode | null, q: Tree
     // ∴ we can stop at the split as subtrees won't have anything else in common deeper
     const l = curr.left;
     const r = curr.right;
-    const nextJumpForP = p.val < curr.val ? curr.left : curr.right;
-    const nextJumpForQ = q.val < curr.val ? curr.left : curr.right;
+    const nextJumpForP = p.val < curr.val ? l : r;
+    const nextJumpForQ = q.val < curr.val ? l : r;
     const isSplitting = nextJumpForP !== nextJumpForQ;
     if (isSplitting) return curr;
     curr = nextJumpForP; // or Q as they are the same node
