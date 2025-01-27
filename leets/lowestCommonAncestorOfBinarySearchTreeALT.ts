@@ -21,10 +21,10 @@ type ancestors = {
  * BIG-O:
  *  TIME: O(n)
  *  MEMORY: O(n)
- *    Worst-case the tree is skewed (height = n items)
+ *    Worst-case the tree is skewed (height = n items), the number of function calls on the stack grows
  *
  * Solution w thoughts 💭
- *  #easy #linked-lists
+ *  #easy #binary-search-trees
  */
 function lowestCommonAncestor(root: TreeNode | null, p: TreeNode | null, q: TreeNode | null): TreeNode | null {
   const pAncestors = dfs(root, p).ancestors;
@@ -48,7 +48,7 @@ function lowestCommonAncestor(root: TreeNode | null, p: TreeNode | null, q: Tree
 }
 
 // To determine if 2 nodes have common ancestors (to cherry-pick lowest)
-//  We need 2 lists of ancestors
+//  we need 2 lists of ancestors
 // Use DFS to find the target, then collect ancestors when bubbling-up (stop traversing)
 // Ancestors are inclusive (count curr node)
 function dfs(node: TreeNode | null, target: TreeNode | null): ancestors {
