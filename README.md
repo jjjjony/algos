@@ -34,20 +34,6 @@ Ops:
 - `.has()` O(1)
 - `.delete()` O(1)
 
-## Set
-
-```typescript
-const set = new Set<number>();
-```
-
-Ops:
-
-- `.add()` O(1)
-- `.has()` O(1)
-- `.delete()` O(1)
-- `.clear()` O(n)
-- `.size` O(1)
-
 ## Linked List
 
 ```typescript
