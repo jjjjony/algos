@@ -1,20 +1,5 @@
 # DSA in TYPESCRIPT
 
-## HashMap
-
-```typescript
-const hashMap = new Map<string, string>();
-```
-
-Ops:
-
-- `.set()` ~O(1) depending on collisions
-- `.get()` O(1)
-- `.has()` O(1)
-- `.delete()` O(1)
-- `.clear()` O(n)
-- `.size` O(1)
-
 ## Graph
 
 ```typescript
