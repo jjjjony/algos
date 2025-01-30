@@ -5,7 +5,7 @@ using SmartUpdatesApi.Routes;
 var builder = WebApplication.CreateBuilder(args);
 {
   builder.Services.AddDbContext<AzContext>(opts =>
-    opts.UseInMemoryDatabase("AzContext"));
+    opts.UseInMemoryDatabase(nameof(AzContext)));
 
   builder.Services.AddOpenApi();
 }
