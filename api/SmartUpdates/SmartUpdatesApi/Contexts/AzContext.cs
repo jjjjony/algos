@@ -12,5 +12,12 @@ public class AzContext : DbContext
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
+    modelBuilder.Entity<VCore>()
+        .HasOne(vc => vc.Vm)          // VCore has one Vm
+          .WithMany(vm => vm.VCores)  // Vm has many VCores
+        .HasForeignKey(vc => vc.VmId) // VCore's VmId is the FK
+          .IsRequired(true);          // Optional - mark FK as required
+
+    base.OnModelCreating(modelBuilder);
   }
 }

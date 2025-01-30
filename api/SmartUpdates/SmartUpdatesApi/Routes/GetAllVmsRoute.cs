@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SmartUpdatesApi.Contexts;
 
 namespace SmartUpdatesApi.Routes;
@@ -10,7 +11,7 @@ public static class GetAllVmsRoute
     [FromServices] AzContext ctx
   )
   {
-    var vms = ctx.VMs.ToList();
+    var vms = ctx.VMs.Include(vm => vm.VCores).ToList();
 
     if (vms.Count == 0) return Results.NoContent();
 

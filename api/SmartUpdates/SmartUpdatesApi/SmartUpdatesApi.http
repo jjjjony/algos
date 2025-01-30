@@ -1,9 +1,7 @@
 @host = http://localhost:5137
 
-### GET CHOICES FOR UI
-# type = os, cpu
-@type = os
-GET {{host}}/api/choices/{{type}}
+### SEED CONTEXT
+POST {{host}}/api/seed
 Accept: application/json
 
 ### GET ALL VMs
@@ -11,10 +9,33 @@ GET {{host}}/api/vm
 Accept: application/json
 
 ### GET VM BY ID
-@vm_id = vm_0194b640-e32a-734a-9995-d35cb033e0a9
+@vm_id = vm_0194b660-5fb7-7d6a-90d4-ba5a93292e19
 GET {{host}}/api/vm/{{vm_id}}
 Accept: application/json
 
-### SEED CONTEXT
-POST {{host}}/api/seed
+### GET CHOICES FOR UI
+# type = os, cpu
+@type = os
+GET {{host}}/api/choices/{{type}}
 Accept: application/json
+
+### MUTATE VCORES
+@vm_id = vm_0194b676-ddf2-76e4-b912-53b42c464dc1
+POST {{host}}/api/vm/{{vm_id}}/vcores
+Accept: application/json
+Content-Type: application/json
+
+[
+  {
+    "Id": "vc_12345678-1234-1234-1234-123456789abc",
+    "VCpus": 4,
+    "Ram": 8,
+    "CpuType": "IntelXeons"
+  },
+  {
+    "Id": "vc_98765432-9876-9876-9876-9876543210ab",
+    "VCpus": 2,
+    "Ram": 4,
+    "CpuType": "AMDThreadripper"
+  }
+]

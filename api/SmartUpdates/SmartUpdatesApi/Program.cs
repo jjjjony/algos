@@ -20,11 +20,15 @@ var app = builder.Build();
 
   app.UseHttpsRedirection();
 
+  // For simplicity these endpoints lack
+  //  - DTOs (& mappers)
+  //  - Global error handling (& logging)
+  //  - Layers (engines, repos, services)
+  app.MapPost("api/seed", SeedContextRoute.Handle);
   app.MapGet("api/choices/{type}", GetChoicesRoute.Handle);
   app.MapGet("api/vm", GetAllVmsRoute.Handle);
   app.MapGet("api/vm/{id}", GetVmRoute.Handle);
-  app.MapPost("api/seed", SeedContextRoute.Handle);
-  // app.MapPost("api/vm/{id}/vcores", SeedContextRoute.Handle);
+  app.MapPost("api/vm/{id}/vcores", UpdateVCoresRoute.Handle);
 
   app.Run();
 }

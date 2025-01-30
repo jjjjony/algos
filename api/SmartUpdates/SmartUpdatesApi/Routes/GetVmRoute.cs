@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SmartUpdatesApi.Constants;
 using SmartUpdatesApi.Contexts;
 
@@ -6,7 +7,7 @@ namespace SmartUpdatesApi.Routes;
 
 public static class GetVmRoute
 {
-  public static IResult Handle
+  public static async Task<IResult> Handle
   (
     [FromRoute] string id,
     [FromServices] AzContext ctx
@@ -14,11 +15,9 @@ public static class GetVmRoute
   {
     if (!id.StartsWith(IdPrefix.VM)) return Results.NotFound();
 
-    var vm = ctx.VMs.FirstOrDefault(vm => vm.Id == id);
+    var vm = await ctx.VMs.Include(vm => vm.VCores).FirstOrDefaultAsync(vm => vm.Id == id);
 
     if (vm == null) return Results.NotFound();
-
-    // TODO: map to DTO
 
     return Results.Ok(vm);
   }
