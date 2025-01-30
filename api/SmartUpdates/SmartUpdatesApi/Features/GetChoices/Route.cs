@@ -2,9 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 using SmartUpdatesApi.Constants;
 
 
-namespace SmartUpdatesApi.Routes;
+namespace SmartUpdatesApi.Features.GetChoices;
 
-public static class GetChoicesRoute
+public static class Route
 {
   public static IResult Handle
   (

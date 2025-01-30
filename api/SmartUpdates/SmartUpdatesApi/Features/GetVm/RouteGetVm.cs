@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using SmartUpdatesApi.Constants;
 using SmartUpdatesApi.Contexts;
 
-namespace SmartUpdatesApi.Routes;
+namespace SmartUpdatesApi.Features.GetVm;
 
-public static class GetVmRoute
+public static class Route
 {
   public static async Task<IResult> Handle
   (

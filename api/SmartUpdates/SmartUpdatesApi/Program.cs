@@ -1,16 +1,14 @@
-using Microsoft.EntityFrameworkCore;
-using SmartUpdatesApi.Contexts;
-using SmartUpdatesApi.Routes;
+using SmartUpdatesApi.Features.Shared;
+using Features = SmartUpdatesApi.Features;
 
+// Prepare the DI container
 var builder = WebApplication.CreateBuilder(args);
 {
-  builder.Services.AddDbContext<AzContext>(opts =>
-    opts.UseInMemoryDatabase(nameof(AzContext)));
-
+  builder.Services.Inject();
   builder.Services.AddOpenApi();
 }
 
-// Configure the HTTP request pipeline.
+// Configure the HTTP request pipeline
 var app = builder.Build();
 {
   if (app.Environment.IsDevelopment())
@@ -24,11 +22,11 @@ var app = builder.Build();
   //  - DTOs (& mappers)
   //  - Global error handling (& logging)
   //  - Layers (engines, repos, services)
-  app.MapPost("api/seed", SeedContextRoute.Handle);
-  app.MapGet("api/choices/{type}", GetChoicesRoute.Handle);
-  app.MapGet("api/vm", GetAllVmsRoute.Handle);
-  app.MapGet("api/vm/{id}", GetVmRoute.Handle);
-  app.MapPost("api/vm/{id}/vcores", UpdateVCoresRoute.Handle);
+  // app.MapPost("api/seed", RouteSeedContext.Route.Handle); // move into auto-seeding
+  app.MapGet("api/choices/{type}", Features.GetChoices.Route.Handle);
+  app.MapGet("api/vm", Features.GetAllVms.Route.Handle);
+  app.MapGet("api/vm/{id}", Features.GetVm.Route.Handle);
+  app.MapPost("api/vm/{id}/vcores", Features.UpdateVCores.Route.Handle);
 
   app.Run();
 }

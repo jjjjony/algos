@@ -4,9 +4,9 @@ using SmartUpdatesApi.Constants;
 using SmartUpdatesApi.Contexts;
 using SmartUpdatesApi.Entities;
 
-namespace SmartUpdatesApi.Routes;
+namespace SmartUpdatesApi.Features;
 
-public static class SeedContextRoute
+public static class RouteSeedContext
 {
   public static async Task<IResult> Handle
   (

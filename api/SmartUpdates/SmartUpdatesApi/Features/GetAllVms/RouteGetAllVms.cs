@@ -2,9 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SmartUpdatesApi.Contexts;
 
-namespace SmartUpdatesApi.Routes;
+namespace SmartUpdatesApi.Features.GetAllVms;
 
-public static class GetAllVmsRoute
+public static class Route
 {
   public static IResult Handle
   (

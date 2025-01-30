@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using SmartUpdatesApi.Contexts;
 using SmartUpdatesApi.Entities;
 
-namespace SmartUpdatesApi.Routes;
+namespace SmartUpdatesApi.Features.UpdateVCores;
 
-public static class UpdateVCoresRoute
+public static class Route
 {
   public static async Task<IResult> Handle
   (

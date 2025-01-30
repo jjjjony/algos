@@ -13,6 +13,8 @@
 
   <ItemGroup>
     <Folder Include="DTOs/" />
+    <Folder Include="Features/GetAllVms/DI/" />
+    <Folder Include="Features/GetAllVms/DTOs/" />
   </ItemGroup>
 
 </Project>
