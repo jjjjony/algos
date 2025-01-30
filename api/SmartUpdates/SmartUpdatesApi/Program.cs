@@ -22,6 +22,8 @@ var app = builder.Build();
 
   app.MapGet("api/choices/{type}", GetChoicesRoute.Handle);
   app.MapGet("api/seed", SeedContextRoute.Handle);
+  // app.MapGet("api/vm/{id}", SeedContextRoute.Handle);
+  // app.MapPost("api/vm/{id}/vcores", SeedContextRoute.Handle);
 
   app.Run();
 }

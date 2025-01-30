@@ -6,7 +6,7 @@ namespace SmartUpdatesApi.Constants;
 /// .getDescription() to get user-friendly value for UI
 /// .toString() gets e.g., "Linux" (persist in DB)
 /// </summary>
-public enum OS
+public enum Os
 {
   Linux,
   Windows
