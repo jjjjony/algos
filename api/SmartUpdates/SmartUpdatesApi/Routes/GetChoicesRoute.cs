@@ -6,7 +6,10 @@ namespace SmartUpdatesApi.Routes;
 
 public static class GetChoicesRoute
 {
-  public static IResult Handle([FromRoute] string type)
+  public static IResult Handle
+  (
+    [FromRoute] string type
+  )
   {
     var res = type switch
     {

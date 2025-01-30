@@ -1,7 +1,20 @@
 @host = http://localhost:5137
 
-###
+### GET CHOICES FOR UI
 # type = os, cpu
 @type = os
 GET {{host}}/api/choices/{{type}}
+Accept: application/json
+
+### GET ALL VMs
+GET {{host}}/api/vm
+Accept: application/json
+
+### GET VM BY ID
+@vm_id = vm_0194b640-e32a-734a-9995-d35cb033e0a9
+GET {{host}}/api/vm/{{vm_id}}
+Accept: application/json
+
+### SEED CONTEXT
+POST {{host}}/api/seed
 Accept: application/json

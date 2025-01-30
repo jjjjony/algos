@@ -8,23 +8,26 @@ namespace SmartUpdatesApi.Routes;
 
 public static class SeedContextRoute
 {
-  public static async Task<IResult> Handle([FromServices] AzContext ctx)
+  public static async Task<IResult> Handle
+  (
+    [FromServices] AzContext ctx
+  )
   {
     var friendlyName = "Broski's VM";
     var curr = await ctx.VMs.FirstOrDefaultAsync(vm => vm.FriendlyName == friendlyName);
 
-    if (curr != null) return Results.Ok(); // already seeded
+    if (curr != null) return Results.Ok(curr.Id); // already seeded
 
-    var vm = new VM
+    var vm = new Vm
     {
       FriendlyName = friendlyName,
-      OSType = OS.Linux.ToString(),
+      OsType = Os.Linux.ToString(),
       CreatedBy = "bro@bro.bro"
     };
 
     await ctx.VMs.AddAsync(vm);
     await ctx.SaveChangesAsync();
 
-    return Results.Ok();
+    return Results.Ok(vm.Id);
   }
 }
