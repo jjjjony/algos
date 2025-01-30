@@ -1,7 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using SmartUpdatesApi.Contexts;
-using SmartUpdatesApi.Entities;
-using SmartUpdatesApi.Constants;
 using SmartUpdatesApi.Routes;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,17 +13,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Configure the HTTP request pipeline.
 var app = builder.Build();
 {
-  // SEED
-  using (var scope = app.Services.CreateScope())
-  {
-    var ctx = scope.ServiceProvider.GetRequiredService<AzContext>();
-    var now = DateTime.UtcNow;
-    var upn = "bro@bro.bro";
-    var vm = new VM { FriendlyName = "Broski's VM", OSType = OS.Linux.ToString(), CreatedAt = now, CreatedBy = upn };
-    ctx.VMs.Add(vm);
-    ctx.SaveChanges();
-  }
-
   if (app.Environment.IsDevelopment())
   {
     app.MapOpenApi();
