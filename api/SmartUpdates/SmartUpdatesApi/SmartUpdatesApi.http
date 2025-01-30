@@ -1,6 +1,7 @@
-@SmartUpdatesApi_HostAddress = http://localhost:5165
-
-GET {{SmartUpdatesApi_HostAddress}}/weatherforecast/
-Accept: application/json
+@host = http://localhost:5137
 
 ###
+# type = os, cpu
+@type = os
+GET {{host}}/api/choices/{{type}}
+Accept: application/json
