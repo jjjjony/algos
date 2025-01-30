@@ -1,0 +1,6 @@
+@SelfHealing3rdPartiesApi_HostAddress = http://localhost:5205
+
+GET {{SelfHealing3rdPartiesApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
